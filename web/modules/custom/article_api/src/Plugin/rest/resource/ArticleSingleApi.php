@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\Request;
  *   label = @Translation("Article Single And Edit API"),
  *   uri_paths = {
  *     "canonical" = "/api/article/{nid}",
- *     "create" = "/api/article/{nid}"
+ *     "https://www.drupal.org/link-relations/create" = "/api/article/{nid}"
  *   }
  * )
  */
@@ -60,25 +60,6 @@ class ArticleSingleApi extends ArticleBaseAbstract {
 		return new ResourceResponse([
 			'message' => "Article '{$node->title->value}' update success"
 		]);
-	}
-	
-	/**
-	 * Responds to entity DELETE requests.
-	 *
-	 * @param $nid
-	 * @return \Drupal\rest\ResourceResponse
-	 */
-	public function delete($nid) {
-		// Get a node storage object.
-		$node = $this->getArticle($nid);
-	
-		if(!$this->articleIsValid($node)) {
-			return $this->articleNotFoundResponse($nid);
-		}
-		
-		$node->delete();
-		
-		return new ResourceResponse(['message' => "Article deleted success"]);
 	}
 	
 }
