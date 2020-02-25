@@ -744,10 +744,9 @@ $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
  * example.org, with all subdomains included.
  */
 
-$settings['trusted_host_patterns'] = [
-		'127.0.0.1',
-		'ashwood.local'
-];
+//$settings['trusted_host_patterns'] = [
+//		'127.0.0.1'
+//];
 
 /**
  * The default list of directories that will be ignored by Drupal's file API.
@@ -798,8 +797,8 @@ $config_directories = [
 ];
 
 $databases['default']['default'] = [
-		'database'  => 'ashwood',
-		'username'  => 'sammy',
+		'database'  => 'drupal8_test',
+		'username'  => 'homestead',
 		'password'  => 'qwerty123',
 		'prefix'    => '',
 		'host'      => 'localhost',

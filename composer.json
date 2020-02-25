@@ -75,6 +75,20 @@
             "bash ./scripts/sql-export-db.sh",
             "bash ./scripts/config-export.sh",
             "bash ./scripts/backup-project-commit.sh"
+        ],
+        "pre-build-project": [
+            "chmod -R 755 scripts",
+            "bash ./scripts/create-dirs.sh",
+            "bash ./scripts/copy-settings-dev.sh",
+            "bash ./scripts/copy-theme-libraries.sh"
+        ],
+        "build-project": [
+            "chmod -R 755 scripts",
+            "bash ./scripts/create-dirs.sh",
+            "bash ./scripts/copy-settings-dev.sh",
+            "bash ./scripts/sql-import-db.sh",
+            "bash ./scripts/config-import.sh",
+            "bash ./scripts/locale-update.sh"
         ]
     }
 }
