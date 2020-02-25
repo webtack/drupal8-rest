@@ -69,5 +69,12 @@
                 "      composer remove drupal/core-project-message"
             ]
         }
+    },
+    "scripts": {
+        "backup-project": [
+            "bash ./scripts/sql-export-db.sh",
+            "bash ./scripts/config-export.sh",
+            "bash ./scripts/backup-project-commit.sh"
+        ]
     }
 }
