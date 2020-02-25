@@ -28,9 +28,10 @@ class ArticleCreateApi extends ArticleBaseAbstract {
 		if($data) {
 			$data['type'] = $this->nodeType;
 			$node = \Drupal\node\Entity\Node::create($data);
+			$node->save();
 		}
 		
-		$node->save();
+		
 		
 		return new ResourceResponse([
 			'article' => $node,
