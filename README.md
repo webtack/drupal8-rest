@@ -1,5 +1,8 @@
 # drupal8-rest
 
+## Demo
+[http://bit.ly/2wEYIo2](http://bit.ly/2wEYIo2)
+
 ## Introduction
 
 This project is a demo phunctional Drupal REST API for Articles Content type
@@ -210,7 +213,7 @@ Authorization:Bearer ...
     ]
 }
 ```
-
+### This is a not fix problem with a DELETE Method [See Issuees](https://www.drupal.org/project/drupal/issues/2949017)
 - `GET /api/article/{nid}/delete` (Delete article)
 - `POST /api/article/create` (Create article)
 *Set Data*
