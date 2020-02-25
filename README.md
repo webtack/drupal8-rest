@@ -24,6 +24,7 @@ vendor/drush/drush/drush cache:rebuild
 ## Config
 
 - Copy this file `config/settings.php` to `web/sites/default`
+- Copy this file `config/sites` to `web`
 - Edit the file for connection database
 - Import DB `config/db` 
 - Check permissions [drupal directories](https://www.drupal.org/forum/support/post-installation/2016-09-22/file-and-directory-permissions-lets-finally-get-this)
