@@ -17,6 +17,9 @@ git clone https://github.com/webtack/drupal8-rest.git
 ```$xslt
 composer install
 ```
+```$xslt
+vendor/drush/drush/drush cache:rebuild
+```
 
 ## Config
 
