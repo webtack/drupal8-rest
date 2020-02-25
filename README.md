@@ -17,10 +17,11 @@ composer install
 
 ## Config
 
-- Copy this file `config/settings.pgp` to `web/sites/default`
+- Copy this file `config/settings.php` to `web/sites/default`
 - Edit the file for connection database
 - Import DB `config/db` 
-- Generate keys from API see [https://www.drupal.org/project/simple_oauth] docs
+- Check permissions [drupal directories](https://www.drupal.org/forum/support/post-installation/2016-09-22/file-and-directory-permissions-lets-finally-get-this)
+- Generate keys from API [see docs](https://www.drupal.org/project/simple_oauth) 
 
 ## API
 
@@ -184,15 +185,33 @@ Authorization:Bearer ...
 *Set Data*
 ```$xslt
 {
-    "title": "My custom title",
-    "body": {
-        "value": "Custom value"
-    }
-    ...
+    "title": "My custom create title 123",
+    "body": [
+        {
+            "value": "<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>\r\n",
+            "format": "basic_html"
+        }
+    ],
+    "field_image": [
+        {
+            "target_id": 1,
+            "target_type": "media",
+            "target_uuid": "cb231240-5269-48c1-8c0f-286ab042aea0",
+            "url": "/media/1/edit"
+        }
+    ],
+    "field_tags": [
+        {
+            "target_id": 1,
+            "target_type": "taxonomy_term",
+            "target_uuid": "f0872e09-48b9-40ff-a81e-c257533d46e6",
+            "url": "/taxonomy/term/1"
+        }
+    ]
 }
 ```
 
-- `DELETE /api/article/{nid}` (Delete article)
+- `GET /api/article/{nid}/delete` (Delete article)
 - `POST /api/article/create` (Create article)
 *Set Data*
 ```$xslt
